@@ -1,4 +1,15 @@
 # Project Library 
+app/
+   |
+   |-header
+   |        |-Nav
+   |
+   |-Search
+   |-LandingPage
+                |- read
+                |- wantToread
+                |- reading
+                            |-book
 
 ## App's Structure
 - Components
