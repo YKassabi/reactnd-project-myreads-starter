@@ -2,36 +2,44 @@ import React from 'react'
 import Header from './Components/Header';
 import LandingPage from './Components/LandingPage';
 import Search from './Components/Search';
-// import * as BooksAPI from './BooksAPI'
-import './App.css'
+import * as BooksAPI from './BooksAPI';
+import './App.css';
 
 class BooksApp extends React.Component {
-  state = {
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
-    showSearchPage: false
+  state ={
+    waitingToFetch:true,
+    books:[],
+    readingStatus: '' //read//wantToread//currentlyReading
   }
+
+
+
+
+  updateBook = (book, shelf) => {
+    BooksAPI.update(book, shelf).then((book) => console.log(`${book} : ${shelf}`))
+  }
+
+
+
+
+  componentDidMount() {
+  BooksAPI.getAll()
+    .then( (books) => {
+      this.setState(() => ({
+        books,
+        waitingToFetch:false
+      }))
+    }).then(()=>console.log('>>>',this.state.books))
+}
 
   render() {
     return (
+
       <div className="app">
         <Header />
-        <LandingPage />
-        {this.state.showSearchPage ? 
-          <Search />
-      : (
-          /////////////////////////////////
-          <div className="list-books">
-            <div className="open-search">
-              <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
-            </div>
-          </div>
-        )}
+        {this.state.waitingToFetch ? <h2> Loading..</h2>  : <LandingPage books={this.state.books} updateBook={this.updateBook}/>}
       </div>
+        
     )
   }
 }
