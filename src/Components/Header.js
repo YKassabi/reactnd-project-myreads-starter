@@ -5,7 +5,7 @@ const Header = () => {
 
         return (
             <div className="list-books-title">
-                <h1>MyReads <span role='img' aria-label="Book">📚</span></h1>
+                <h1>My Reads<span role='img' aria-label="Book">📚</span></h1>
                 <Nav />
             </div>
         )

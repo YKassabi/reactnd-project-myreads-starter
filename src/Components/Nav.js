@@ -2,9 +2,9 @@ import React from 'react';
 
 const Nav = () => {
     return (
-            <ul>
-                <li> search</li>
-                <li>Home</li>
+            <ul className='NavBar'>
+                <li><a href="">Search </a></li>
+                <li><a href=''>Home </a> </li>
             </ul>
         )
 }

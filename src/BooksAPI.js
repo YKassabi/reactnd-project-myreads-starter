@@ -21,6 +21,10 @@ export const getAll = () =>
   fetch(`${api}/books`, { headers })
     .then(res => res.json())
     .then(data => data.books)
+    .then((data) => {
+      console.log('data from get all : ',data)
+      return data
+    })
 
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
@@ -30,7 +34,9 @@ export const update = (book, shelf) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ shelf })
-  }).then(res => res.json())
+  }).then(res => res.json()).then((data)=> {
+    console.log('data from update : ', data)
+  return data})
 
 export const search = (query) =>
   fetch(`${api}/search`, {

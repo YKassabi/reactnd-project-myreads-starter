@@ -1,3 +1,4 @@
+/* #e1c340 Cyan #4cd7d0 Tiffany Blue #a4e8e0 Yellow #f8ea8c */
 html, body, .root {
   height: 100%;
 }
@@ -7,21 +8,29 @@ body {
 }
 
 body, .app {
-  background: white;
+  background: #f0f0f0;
 }
 
 /* main page */
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: linear-gradient(#f8ea8c, #e1c340, #f8ea8c,#eee),rgba(0, 0, 0, .8);
+;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .list-books-title h1 {
   font-weight: 400;
   margin: 0;
-  color: white;
+  color: #000;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px #000,
+  2px 2px 7px #fff,
+  5px 5px 7px #000;
+  font-size: 2.7rem;
+  letter-spacing: .7rem;
 }
 
 .list-books-content {
@@ -40,7 +49,14 @@ body, .app {
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+border-bottom: 2px solid #dedede;
+padding: 20px 30px;
+border-radius: 40px;
+background-color: #4cd7d0;
+box-shadow: 3px 3px 3px #a4e8e0;
+text-align: center;
+display: inline;
+margin-top:2rem;
 }
 
 .bookshelf-books {
@@ -131,6 +147,11 @@ button:active {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: beige;
+  border-radius: 30px;
+  border-right: 4px dotted #4cd7d0;
+  border-bottom: 4px dotted #4cd7d0;
+  box-shadow: -3px -3px darkcyan;
 }
 
 .books-grid li {
@@ -195,4 +216,15 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+.NavBar{
+  list-style-type: none;
+}
+.NavBar>li, a{
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
