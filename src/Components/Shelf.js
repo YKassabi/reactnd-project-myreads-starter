@@ -6,7 +6,7 @@ import Book from './Book';
 // Array of the associate books props.ArrayOfBooks
 
 const Reading = (props) =>{
-    console.log(props.ArrayOfBooks)
+    // console.log(props.ArrayOfBooks)
     return (
         <div className="bookshelf">
         <h2 className="bookshelf-title">{props.title}</h2>

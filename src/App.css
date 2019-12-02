@@ -56,7 +56,7 @@ background-color: #4cd7d0;
 box-shadow: 3px 3px 3px #a4e8e0;
 text-align: center;
 display: inline;
-margin-top:2rem;
+margin-top: 2rem;
 }
 
 .bookshelf-books {
@@ -92,7 +92,7 @@ margin-top:2rem;
 /* search page */
 
 .search-books-bar {
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
@@ -127,6 +127,7 @@ margin-top:2rem;
   font-size: 0;
   border: none;
   outline: none;
+  background-color: #e1c340;
 }
 
 button:active {
@@ -227,4 +228,5 @@ button:active {
   display: inline;
   margin: 0;
   padding: 0;
+  margin-left:1rem;
 }
